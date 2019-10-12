@@ -26,6 +26,10 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+
+        // Schedule the ProcessDucks Job to run every everyFiveMinutes.
+        // This requires a Cron Job running the 'php artisan schedule:run' command
+        $schedule->job(new \App\Jobs\ProcessDucks)->everyFiveMinutes();
     }
 
     /**

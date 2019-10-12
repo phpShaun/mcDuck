@@ -69,6 +69,7 @@
                 <div class="top-right links">
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/ducks') }}">My Flock</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,17 +82,16 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    Welcome to LiveDuck!
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div>
+                    @auth
+                        <h3>Be sure to check in on your duck <a href="{{ url('/ducks') }}">here</a></h3>
+
+                    @else 
+                        <h3>Get started with LiveDuck by registering and creating your own Living Duck!</h3>
+                    @endauth
                 </div>
             </div>
         </div>

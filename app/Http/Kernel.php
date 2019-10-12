@@ -60,6 +60,7 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+        'validateDuck' => \App\Http\Middleware\ValidateDuck::class, // Added validateDuck middleware to ensure that the user is editing their own duck
     ];
 
     /**

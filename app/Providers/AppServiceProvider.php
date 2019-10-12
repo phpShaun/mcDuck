@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Duck;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,7 +23,8 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
-        //
+    {   
+        // Add observer to the Duck Model
+        Duck::observe(DuckObserver::class);
     }
 }
